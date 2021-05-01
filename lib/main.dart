@@ -46,7 +46,8 @@ class PanelInformaTextField extends StatelessWidget {
       child: Text(
         name,
         textAlign: TextAlign.left,
-        style: TextStyle(fontWeight: FontWeight.bold),
+        style:
+            TextStyle(fontWeight: FontWeight.bold, color: HexColor("515151")),
       ),
     );
   }
@@ -215,11 +216,15 @@ class PanelContact extends StatelessWidget {
         Container(
           child: Text(
             "Contact",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: HexColor("515151")),
           ),
           alignment: Alignment.topLeft,
-          decoration:
-              BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(width: 1, color: HexColor("e3e3e3")))),
         ),
         CustomGroup(
           title: "Addres",
