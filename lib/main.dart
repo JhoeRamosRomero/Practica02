@@ -47,7 +47,7 @@ class PanelInformaTextField extends StatelessWidget {
         name,
         textAlign: TextAlign.left,
         style:
-            TextStyle(fontWeight: FontWeight.bold, color: HexColor("515151")),
+            TextStyle(fontWeight: FontWeight.bold, color: HexColor("4d4d4d")),
       ),
     );
   }
@@ -62,7 +62,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(),
+          border: Border.all(color: HexColor("e8e8e8")),
           borderRadius: BorderRadius.circular(5),
           color: Colors.white),
       child: TextField(
@@ -156,14 +156,8 @@ class PanelPersonal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Text(
-            "Personal",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          ),
-          alignment: Alignment.topLeft,
-          decoration:
-              BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+        PanelAgrupador(
+          panelName: "Personal",
         ),
         CustomGroup(
           title: "Name",
@@ -182,14 +176,8 @@ class PanelAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Text(
-            "Account",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          ),
-          alignment: Alignment.topLeft,
-          decoration:
-              BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+        PanelAgrupador(
+          panelName: "Account",
         ),
         CustomGroup(
           title: "Email",
@@ -213,18 +201,8 @@ class PanelContact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Text(
-            "Contact",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
-                color: HexColor("515151")),
-          ),
-          alignment: Alignment.topLeft,
-          decoration: BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(width: 1, color: HexColor("e3e3e3")))),
+        PanelAgrupador(
+          panelName: "Contact",
         ),
         CustomGroup(
           title: "Addres",
@@ -239,6 +217,26 @@ class PanelContact extends StatelessWidget {
           placeholder: "8373833678",
         ),
       ],
+    );
+  }
+}
+
+class PanelAgrupador extends StatelessWidget {
+  final String panelName;
+  const PanelAgrupador({this.panelName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text(
+        panelName,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+      ),
+      margin: EdgeInsets.symmetric(vertical: 10),
+      alignment: Alignment.topLeft,
+      decoration: BoxDecoration(
+          border:
+              Border(bottom: BorderSide(width: 1, color: HexColor("e8e8e8")))),
     );
   }
 }
